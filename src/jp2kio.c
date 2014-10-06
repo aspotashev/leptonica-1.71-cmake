@@ -108,7 +108,7 @@
 
     /* Leptonica supports both 2.0 and 2.1.  If you have 2.0,
      * change MINOR to 0.  */
-#define  MINOR   1
+#define  MINOR   0
 
 #if MINOR == 0
   static const l_int32  OpjMinor = 0;

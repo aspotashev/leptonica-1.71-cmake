@@ -69,7 +69,7 @@
 #endif
 
 #if HAVE_LIBJP2K  /* assuming it's 2.1 */
-#include "openjpeg-2.1/openjpeg.h"
+#include "openjpeg-2.0/openjpeg.h"
 #endif
 
 #define stringJoinInPlace(s1, s2) \
