@@ -78,10 +78,10 @@ AS_IF([test "x$with_libwebp" != xno],
   )
 )
 
-AS_IF([test "x$with_libopenjp2" != xno],
+AS_IF([test "x$with_libopenjpeg" != xno],
   AC_CHECK_LIB([openjp2], [opj_create_decompress],
     AC_DEFINE([HAVE_LIBJP2K], 1, [Define to 1 if you have libopenjp2.]) AC_SUBST([LIBJP2K_LIBS], [-lopenjp2]),
-    AS_IF([test "x$with_libopenjp2" = xyes], AC_MSG_ERROR([libopenjp2 support requested but library not found]))
+    AS_IF([test "x$with_libopenjpeg" = xyes], AC_MSG_ERROR([libopenjp2 support requested but library not found]))
   )
 )
 
