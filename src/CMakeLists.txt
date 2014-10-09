@@ -78,6 +78,8 @@ install(
 )
 
 add_definitions(-fPIC)
+add_definitions(-ggdb)
+
 add_library(lept STATIC
     ${LIBLEPT_SOURCES}
     ${LIBLEPT_HEADERS}
