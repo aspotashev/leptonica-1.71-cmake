@@ -70,9 +70,19 @@ allheaders.h alltypes.h
  recog.h regutils.h stack.h sudoku.h watershed.h
 )
 
+install(
+    FILES
+        ${LIBLEPT_HEADERS}
+    DESTINATION
+        include
+)
+
 add_definitions(-fPIC)
 add_library(lept STATIC
     ${LIBLEPT_SOURCES}
     ${LIBLEPT_HEADERS}
 )
+
+install(TARGETS lept
+    DESTINATION lib)
 
