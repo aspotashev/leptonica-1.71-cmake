@@ -60,7 +60,7 @@ set(ALL_EXECUTABLES
     ${INSTALL_PROGS} ${AUTO_REG_PROGS} ${MANUAL_REG_PROGS} ${OTHER_PROGS})
 
 foreach (PROG ${ALL_EXECUTABLES})
-    add_executable(${PROG} ${PROG}.cpp)
+    add_executable(${PROG} ${PROG}.c)
 endforeach()
 
 # target_link_libraries($(INSTALL_PROGS))
