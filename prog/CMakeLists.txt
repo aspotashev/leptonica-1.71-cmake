@@ -2,7 +2,7 @@
 set(INSTALL_PROGS
     convertfilestopdf convertfilestops convertformat convertsegfilestopdf
     convertsegfilestops converttopdf converttops fileinfo printimage
-    printsplitimage printtiff splitimage2pdf xtractprotos
+    printsplitimage printtiff splitimage2pdf
 )
 
 set(AUTO_REG_PROGS

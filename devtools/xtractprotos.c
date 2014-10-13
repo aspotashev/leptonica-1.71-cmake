@@ -83,7 +83,7 @@
  */
 
 #include <string.h>
-#include "allheaders.h"
+#include "former_allheaders.h"
 
 static const l_int32  L_BUF_SIZE = 512;
 

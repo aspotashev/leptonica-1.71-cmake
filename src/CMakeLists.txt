@@ -60,14 +60,24 @@ adaptmap.c affine.c
  writefile.c zlibmem.c zlibmemstub.c
 )
 
+set(ADDHEADERS_DIR_PATH "${CMAKE_BINARY_DIR}/leptonica-include")
+set(ADDHEADERS_FILE_PATH "${ADDHEADERS_DIR_PATH}/allheaders.h")
+
+file(MAKE_DIRECTORY "${ADDHEADERS_DIR_PATH}")
+configure_file(
+    "${CMAKE_SOURCE_DIR}/devtools/former_allheaders.h"
+    "${ADDHEADERS_FILE_PATH}"
+    COPYONLY)
+
 list(APPEND LIBLEPT_HEADERS
-allheaders.h alltypes.h
- array.h arrayaccess.h bbuffer.h bilateral.h bmf.h bmp.h
- ccbord.h dewarp.h endianness.h environ.h		
- gplot.h heap.h imageio.h jbclass.h
- leptwin.h list.h	
- morph.h pix.h ptra.h queue.h readbarcode.h
- recog.h regutils.h stack.h sudoku.h watershed.h
+    "${ADDHEADERS_FILE_PATH}"
+    alltypes.h
+    array.h arrayaccess.h bbuffer.h bilateral.h bmf.h bmp.h
+    ccbord.h dewarp.h endianness.h environ.h
+    gplot.h heap.h imageio.h jbclass.h
+    leptwin.h list.h
+    morph.h pix.h ptra.h queue.h readbarcode.h
+    recog.h regutils.h stack.h sudoku.h watershed.h
 )
 
 install(
@@ -76,6 +86,9 @@ install(
     DESTINATION
         include
 )
+
+include_directories("${ADDHEADERS_DIR_PATH}")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_definitions(-fPIC)
 add_definitions(-ggdb)
@@ -87,4 +100,3 @@ add_library(lept STATIC
 
 install(TARGETS lept
     DESTINATION lib)
-
