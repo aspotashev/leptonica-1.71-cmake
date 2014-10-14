@@ -63,7 +63,12 @@ include_directories("${ADDHEADERS_DIR_PATH}")
 include_directories("${CMAKE_SOURCE_DIR}/src")
 
 foreach (PROG ${ALL_EXECUTABLES})
-    add_executable(${PROG} ${PROG}.c)
+    if ("${PROG}" STREQUAL "dwamorph1_reg" OR "${PROG}" STREQUAL "dwamorph2_reg")
+        add_executable(${PROG} ${PROG}.c dwalinear.3.c dwalinearlow.3.c)
+    else()
+        add_executable(${PROG} ${PROG}.c)
+    endif()
+
     target_link_libraries(${PROG} lept m)
 endforeach()
 
