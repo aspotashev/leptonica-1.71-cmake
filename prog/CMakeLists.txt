@@ -64,6 +64,7 @@ include_directories("${CMAKE_SOURCE_DIR}/src")
 
 foreach (PROG ${ALL_EXECUTABLES})
     add_executable(${PROG} ${PROG}.c)
+    target_link_libraries(${PROG} lept m)
 endforeach()
 
 # target_link_libraries($(INSTALL_PROGS))
