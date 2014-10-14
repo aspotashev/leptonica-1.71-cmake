@@ -59,6 +59,9 @@ set(OTHER_PROGS
 set(ALL_EXECUTABLES
     ${INSTALL_PROGS} ${AUTO_REG_PROGS} ${MANUAL_REG_PROGS} ${OTHER_PROGS})
 
+include_directories("${ADDHEADERS_DIR_PATH}")
+include_directories("${CMAKE_SOURCE_DIR}/src")
+
 foreach (PROG ${ALL_EXECUTABLES})
     add_executable(${PROG} ${PROG}.c)
 endforeach()

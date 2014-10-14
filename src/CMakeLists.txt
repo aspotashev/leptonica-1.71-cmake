@@ -60,9 +60,6 @@ adaptmap.c affine.c
  writefile.c zlibmem.c zlibmemstub.c
 )
 
-set(ADDHEADERS_DIR_PATH "${CMAKE_BINARY_DIR}/leptonica-include")
-set(ADDHEADERS_FILE_PATH "${ADDHEADERS_DIR_PATH}/allheaders.h")
-
 file(MAKE_DIRECTORY "${ADDHEADERS_DIR_PATH}")
 configure_file(
     "${CMAKE_SOURCE_DIR}/devtools/former_allheaders.h"
