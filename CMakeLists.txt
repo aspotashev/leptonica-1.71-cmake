@@ -11,7 +11,7 @@ add_subdirectory(prog)
 ########### install files ###############
 
 configure_file(lept.pc.in lept.pc @ONLY)
-install(FILES lept.pc DESTINATION lib/pkgconfig)
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/lept.pc" DESTINATION lib/pkgconfig)
 
 # -> share/doc/leptonica
 install(
