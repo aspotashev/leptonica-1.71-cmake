@@ -20,7 +20,9 @@ endif()
 
 add_subdirectory(src)
 add_subdirectory(devtools)
-add_subdirectory(prog)
+if(NOT WIN32)
+    add_subdirectory(prog)
+endif()
 
 ########### install files ###############
 
