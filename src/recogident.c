@@ -871,8 +871,8 @@ PIX        *pixt, *pixt1, *pixt2;
     }
 
     if (debugflag > 0) {
+        char buf[128];
         lept_mkdir("recog");
-        char  buf[128];
         pixt1 = fpixDisplayMaxDynamicRange(fpix);
         pixt2 = pixExpandReplicate(pixt1, 5);
         snprintf(buf, sizeof(buf), "/tmp/recog/junkbs_%d.png", debugflag);

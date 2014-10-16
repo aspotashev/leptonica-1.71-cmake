@@ -2092,11 +2092,13 @@ char  *realdir;
         *pexists = 1;
     }
 #else  /* _WIN32 */
-    l_uint32  attributes;
-    attributes = GetFileAttributes(realdir);
-    if (attributes != INVALID_FILE_ATTRIBUTES &&
-        (attributes & FILE_ATTRIBUTE_DIRECTORY)) {
-        *pexists = 1;
+    {
+        l_uint32  attributes;
+        attributes = GetFileAttributes(realdir);
+        if (attributes != INVALID_FILE_ATTRIBUTES &&
+            (attributes & FILE_ATTRIBUTE_DIRECTORY)) {
+            *pexists = 1;
+        }
     }
 #endif  /* _WIN32 */
 
@@ -2840,9 +2842,11 @@ size_t  len;
 
         /* Start with <temp> directory */
 #ifdef _WIN32
-    char  dirt[MAX_PATH];
-    GetTempPath(sizeof(dirt), dirt);
-    snprintf(result, nbytes, "%s", dirt);
+    {
+        char dirt[MAX_PATH];
+        GetTempPath(sizeof(dirt), dirt);
+        snprintf(result, nbytes, "%s", dirt);
+    }
 #else
     snprintf(result, nbytes, "%s", "/tmp");
 #endif  /* _WIN32 */
