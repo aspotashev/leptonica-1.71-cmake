@@ -1,6 +1,10 @@
 project(leptonica)
 cmake_minimum_required(VERSION 2.8)
 
+if (NO_CONSOLE_IO)
+    add_definitions(-DNO_CONSOLE_IO)
+endif()
+
 set(ADDHEADERS_DIR_PATH "${CMAKE_BINARY_DIR}/leptonica-include")
 set(ADDHEADERS_FILE_PATH "${ADDHEADERS_DIR_PATH}/allheaders.h")
 
