@@ -81,7 +81,7 @@ install(
     FILES
         ${LIBLEPT_HEADERS}
     DESTINATION
-        include
+        include/leptonica
 )
 
 include_directories("${ALLHEADERS_DIR_PATH}")
