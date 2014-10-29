@@ -60,14 +60,14 @@ adaptmap.c affine.c
  writefile.c zlibmem.c zlibmemstub.c
 )
 
-file(MAKE_DIRECTORY "${ADDHEADERS_DIR_PATH}")
+file(MAKE_DIRECTORY "${ALLHEADERS_DIR_PATH}")
 configure_file(
     "${CMAKE_SOURCE_DIR}/devtools/former_allheaders.h"
-    "${ADDHEADERS_FILE_PATH}"
+    "${ALLHEADERS_FILE_PATH}"
     COPYONLY)
 
 list(APPEND LIBLEPT_HEADERS
-    "${ADDHEADERS_FILE_PATH}"
+    "${ALLHEADERS_FILE_PATH}"
     alltypes.h
     array.h arrayaccess.h bbuffer.h bilateral.h bmf.h bmp.h
     ccbord.h dewarp.h endianness.h environ.h
@@ -84,7 +84,7 @@ install(
         include
 )
 
-include_directories("${ADDHEADERS_DIR_PATH}")
+include_directories("${ALLHEADERS_DIR_PATH}")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_definitions(-fPIC)

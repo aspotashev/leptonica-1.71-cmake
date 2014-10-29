@@ -5,8 +5,8 @@ if (NO_CONSOLE_IO)
     add_definitions(-DNO_CONSOLE_IO)
 endif()
 
-set(ADDHEADERS_DIR_PATH "${CMAKE_BINARY_DIR}/leptonica-include")
-set(ADDHEADERS_FILE_PATH "${ADDHEADERS_DIR_PATH}/allheaders.h")
+set(ALLHEADERS_DIR_PATH "${CMAKE_BINARY_DIR}/leptonica-include")
+set(ALLHEADERS_FILE_PATH "${ALLHEADERS_DIR_PATH}/allheaders.h")
 
 if(WIN32)
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
